@@ -2,13 +2,16 @@
 
 (#%require rackunit)
 
+(define (square x)
+  (* x x))
+
 (define (square-list items)
   (if (null? items)
       nil
-      (cons (* (car items) (car items)) (square-list (cdr items)))))
+      (cons (square (car items)) (square-list (cdr items)))))
 
 (define (square-list-map items)
-  (map (lambda (x) (* x x)) items))
+  (map square items))
 
 (define test-list (list 3 5 7 8 21 4))
 
