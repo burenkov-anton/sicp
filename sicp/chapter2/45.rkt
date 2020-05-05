@@ -13,4 +13,4 @@
 
 (define up-split (split below beside))
 
-(paint (right-split einstein 1))
+(paint (right-split (escher) 1))
