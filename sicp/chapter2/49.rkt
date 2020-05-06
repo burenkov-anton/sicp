@@ -128,3 +128,12 @@
     (make-segment (make-vect 0.60 0.48) (make-vect 0.80 0.00))
     (make-segment (make-vect 0.40 0.00) (make-vect 0.50 0.30))
     (make-segment (make-vect 0.50 0.30) (make-vect 0.60 0.00)))))
+
+(define square-frame
+  (segments->painter
+   (list
+    (make-segment (make-vect 0.0 0.0) (make-vect 1.0 0.0))
+    (make-segment (make-vect 1.0 0.0) (make-vect 1.0 1.0))
+    (make-segment (make-vect 1.0 1.0) (make-vect 0.0 1.0))
+    (make-segment (make-vect 0.0 1.0) (make-vect 0.0 0.0)))))
+    
