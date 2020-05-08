@@ -196,4 +196,29 @@
           (beside (below painter top-left)
                   (below bottom-right corner))))))
 
-(paint (corner-split wave 4))
+(define (square-of-four tl tr bl br)
+  (lambda (painter)
+    (let ((top (beside (tl painter) (tr painter)))
+          (bottom (beside (bl painter) (br painter))))
+      (below bottom top))))
+
+(define (flip-vert painter)
+  (transform-painter painter
+                     (make-vect 0.0 1.0)
+                     (make-vect 1.0 1.0)
+                     (make-vect 0.0 0.0)))
+
+(define (flip-horiz painter)
+  (transform-painter painter
+                     (make-vect 1.0 0.0)
+                     (make-vect 0.0 0.0)
+                     (make-vect 1.0 1.0)))
+
+(define (rotate180 painter) (flip-vert (flip-horiz painter)))
+
+(define (square-limit painter n)
+  (let ((combine4 (square-of-four rotate180  flip-vert
+                                  identity flip-horiz )))
+    (combine4 (corner-split painter n))))
+
+(paint (corner-split (square-limit wave 2) 2))
