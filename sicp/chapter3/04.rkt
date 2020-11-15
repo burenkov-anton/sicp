@@ -5,8 +5,7 @@
 (define (call-the-cops) (error "Cops called"))
 
 (define (make-account balance secret)
-  (let ((pass secret))
-    (let ((attempts 0))
+  (let ((attempts 0))
   (define (withdraw amount)
     (if (>= balance amount)
         (begin (set! balance (- balance amount))
@@ -27,6 +26,6 @@
                            (begin
                              (set! attempts (inc attempts))
                              (error "Wrong password"))))))
-  dispatch)))
+  dispatch))
 
 (define acc (make-account 100 's-p))

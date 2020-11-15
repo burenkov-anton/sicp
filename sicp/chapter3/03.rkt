@@ -3,7 +3,6 @@
 (#%require rackunit)
 
 (define (make-account balance secret)
-  (let ((pass secret))
   (define (withdraw amount)
     (if (>= balance amount)
         (begin (set! balance (- balance amount))
@@ -19,7 +18,7 @@
                  (else (error "Unknown request -- MAKE-ACCOUNT"
                        m))))
           (else (error "Wrong password"))))
-  dispatch))
+  dispatch)
 
 (define acc (make-account 100 'secret-password))
 
