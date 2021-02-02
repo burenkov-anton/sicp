@@ -22,6 +22,7 @@
 
 
 
-(check-equal? (round (cube-root 27)) 3.0)
-
-(check-equal? (round (cube-root 1000)) 10.0)
+(check-equal? (round (* 1000 (cube-root 8.0))) 2000.0)
+(check-equal? (round (* 1000 (cube-root 1000.0))) 10000.0)
+(check-equal? (round (* 1000 (cube-root 1000000000.0))) 1000000.0)
+(check-equal? (round (* 1000 (cube-root 0.008))) 200.0)
