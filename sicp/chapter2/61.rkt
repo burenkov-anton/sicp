@@ -22,8 +22,7 @@
 (define y (adjoin-set 0 x))
 (define z (adjoin-set 1 y))
 (define q (adjoin-set 1 z))
-(define w (adjoin-set 4 q))
 
 (check-equal? z q)
-(check-equal? (adjoin-set 1(adjoin-set 0 (adjoin-set 2 '())))
-              (adjoin-set 1(adjoin-set 2 (adjoin-set 0 '()))))
+(check-equal? (adjoin-set 1 (adjoin-set 0 (adjoin-set 2 '())))
+              (adjoin-set 1 (adjoin-set 2 (adjoin-set 0 '()))))
