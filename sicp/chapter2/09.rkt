@@ -54,7 +54,7 @@
                                       (width interval2)))
 (check-equal? (width interval-add) (+ (width interval)
                                       (width interval2)))
-(check-not-equal? (width interval-sub) (* (width interval)
+(check-not-equal? (width interval-mul) (* (width interval)
                                           (width interval2)))
 (check-not-equal? (width interval-div) (/ (width interval)
                                           (width interval2)))
